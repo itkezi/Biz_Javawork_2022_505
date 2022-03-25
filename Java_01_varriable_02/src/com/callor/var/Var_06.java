@@ -7,7 +7,7 @@ public class Var_06 {
 		int intNum1 = 0; 		
 		int intNum2 = 0; 		
 		
-		int intSum =0; // 덧셈(합)
+		int intSum = 0; // 덧셈(합)
 		int intDeffrence = 0; // 뺄셈(차)
 		int intProduct = 0; // 곱셈
 		int intDivide = 0; // 나눗셈
