@@ -27,10 +27,10 @@ public class Var_06 {
 		//  : A=2, B=1 일때
 		//  : A*B, A*++B, A*B 는 2, 4, 4 로 출력된다.
 		//  : A*B, A*B++, A*B 는 2, 2, 4 로 출력된다.
-		int A = 2; int B = 1;
-		System.out.printf("%d, %d, %d\n", A*B, A*++B, A*B);
-		A = 2; B = 1; // (초기화해주기)
-		System.out.printf("%d, %d, %d\n", A*B, A*B++, A*B);
+		int ex1 = 2; int ex2 = 1;
+		System.out.printf("%d, %d, %d\n", ex1*ex2, ex1*++ex2, ex1*ex2);
+		ex1 = 2; ex2 = 1; // (초기화해주기)
+		System.out.printf("%d, %d, %d\n", ex1*ex2, ex1*ex2++, ex1*ex2);
 		
 	}
 
