@@ -1,5 +1,10 @@
 # 자바 프로젝트
-## 2022-0318
+## 2022-03-18 프로젝트 시작
+
+## 2022-03-29
+### :hamster:[문자열형 변수](https://github.com/itkezi/Biz_Javawork_2022_505/tree/master/Java_10_Varriable_05)
+* 문자열형 변수 선언하기
+* 문자열형 변수 선언하기(연결 연산)
 
 ## 2022-03-30
 ### :cat:[bolean과 if() 명령문](https://github.com/itkezi/Biz_Javawork_2022_505/tree/master/Java_10_Varriable_06)
