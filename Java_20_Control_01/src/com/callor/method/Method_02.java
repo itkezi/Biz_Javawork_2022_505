@@ -20,6 +20,10 @@ public class Method_02 {
 		System.out.println(str);
 	}
 	
+	
+	// 명령문 해석
+	// 1. num()를 실행하여 = > num를 호출(call)하여 실행하고 
+	// 2. num()가 return하는 data를 intNum 변수에 저장하라
 	public static int num() {
 		return 100;
 	}
