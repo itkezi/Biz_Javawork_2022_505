@@ -12,7 +12,8 @@
 * boolean 연산하기 => 비교연산
 * if() 문 기본 사용법
 
-### []
+### [Method](https://github.com/itkezi/Biz_Javawork_2022_505/tree/master/Java_20_Control_03)
 * 2022-04-04
-* static 선언과 dynamic 선언
-* static 선언되지 않은 class를 변수처럼 선언
+* Method
+* return 명령
+* 정적 클래스 (static class)
