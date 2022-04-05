@@ -17,3 +17,8 @@
 * Method
 * return 명령
 * 정적 클래스 (static class)
+
+### [Class 와 반복문](https://github.com/itkezi/Biz_Javawork_2022_505/tree/master/Java_20_Control_04)
+* Scanner Class
+* Random Class
+* For(;;) 반복문
