@@ -1,6 +1,6 @@
 package com.callor.controller.op;
 
-public class CasCading_01 {
+public class CastingEx01 {
 
 	public static void main(String[] args) {
 		
@@ -10,13 +10,13 @@ public class CasCading_01 {
 		long longNum1 = 0; // 2의 64승
 
 		// 크기(저장공간)가 작은 type의 변수에 크기가 큰 type의 변수 값을 복사 대입하는 경우 값을 잃을 수 있다.
-		// 하지만 억지로 대입하고자 한다면 :강제 형 변환(CasCading)"을 수행하야한다.
+		// 하지만 억지로 대입하고자 한다면 :강제 형 변환(Casting)"을 수행하야한다.
 		// 강제 형 변환을 수행했을 때 예측할 수 없는 결과가 나올 수 있고 그 책임은 순전히 개발자 몫이다.
 		shortNum1 = (short)intNum1 ;
 		intNum1 = (int)longNum1 ;
 		
 		// ****매우 주의 해야할 코드****
-		// 연산식에 복합연산자가 포함될 경우 변수간에 강제 형 번환이 발생한다
+		// 연산식에 복합연산자가 포함될 경우 변수간에 강제 형 변환이 발생한다
 		// 결과는 예츨할 수 없고 중요한 문제를 야기 할 수 있다.
 		shortNum1 += intNum1 ;
 		intNum1 += longNum1;
