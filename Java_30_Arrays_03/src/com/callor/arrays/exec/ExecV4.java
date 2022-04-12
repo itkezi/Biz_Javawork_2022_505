@@ -14,15 +14,15 @@ public class ExecV4 {
 			intRnd[i] = (int) (Math.random() * 100) + 1;
 		}
 
-		int intSum = 0;
+		int intEvenSum = 0;
 
 		for (int i = 0; i < intRnd.length; i++) {
 			boolean bEven = intRnd[i] % 2 == 0;
 
 			if (bEven) {
-				intSum += intRnd[i];
+				intEvenSum += intRnd[i];
 			}
 		}
-		System.out.println("짝수의 합은 " + intSum + "입니다.");
+		System.out.println("짝수들의 총합은 " + intEvenSum + "입니다.");
 	}
 }
