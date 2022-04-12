@@ -29,9 +29,9 @@ public class ArraysV5 {
 		
 		// for() 반복문 뒤에는 반드시 {} 를 사용하자
 		// 명령문 끝에 세미콜론(;) 이 오면 명령문이 끝난다
-		for(int i = 0 ; i < 100000; i++);
-		System.out.println("대한민국만세");
-		
+//		for(int i = 0 ; i < 100000; i++);
+//		System.out.println("대한민국만세");
+//		
 		
 	}
 
