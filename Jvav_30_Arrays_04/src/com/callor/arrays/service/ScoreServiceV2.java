@@ -2,7 +2,7 @@ package com.callor.arrays.service;
 
 import com.callor.arrays.utils.Line;
 
-public class ScoreServiceV1 {
+public class ScoreServiceV2 {
 
 	// 클래스 영역에 선언된 변수
 	// ScoreServiceV1 클래스에 선언된 모든 method에서 변수에 접근(읽고, 저장)할 수 있다.
@@ -20,7 +20,7 @@ public class ScoreServiceV1 {
 	// [임의로 생성자 메서드를 선언하는 이유]
 	//  클래스 영역에 선언된 변수를 초기화하여 사용할 수 있도록 준비하는 코드를 포함한다.
 
-	public ScoreServiceV1() {
+	public ScoreServiceV2() {
 
 		intKor = new int[100]; // intKor 배열이 사용할 (저장, 읽기) 준비가 된다.
 	}
@@ -37,28 +37,24 @@ public class ScoreServiceV1 {
 
 	public void printScore() {
 
-		// Line 클래스에 선언된 dLine 속성(변수)는 static이기 때문에
-		// Line 클래스를 line 인스턴스를 만들고 line.dLine처럼 접근할 필요가 있다.
+		// Line 클래스에 선언된 dLine() 속성(변수)는 static이기 때문에
+		// Line 클래스를 line 인스턴스를 만들고 line.dLine()처럼 접근할 필요가 있다.
 		//	Line line = new Line();
 		//	System.out.println(line.dLine);
 
-		// dLine 속성(변수)은 static으로 선언되어 있기 때문에
-		// Line 클래스를 인스턴스로 생성하지 않고도 접근할 수 있다.
-		
-		// Line.java 에서 final 키워드를 사용했기 때문에 사용 불가
-		//		Line.dLine = "*";
-		System.out.println(Line.dLine);
+		// Line 클래스에 static으로 선언된 dLine()에게 정수값을 전달하고, 정수 개수만큼 라인 문자열을 return 받는다
+		System.out.println(Line.dLine(72));
 		System.out.println("국어 성적 일람표");
-		System.out.println(Line.sLine);
+		System.out.println(Line.sLine(72));
 		
 		for (int i = 0 ; i < intKor.length; i++) {
-			System.out.printf("%d\t", intKor[i]);
+			System.out.printf("%d: %d\t\t", (i+1), intKor[i]);
 			if ((i + 1) % 5 == 0) {
 				System.out.println();
 			}
 		}
 
-		System.out.println(Line.dLine);
+		System.out.println(Line.dLine(72));
 	}
 
 }
