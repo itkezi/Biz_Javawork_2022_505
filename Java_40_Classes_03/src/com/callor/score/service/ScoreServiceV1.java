@@ -19,7 +19,7 @@ public class ScoreServiceV1 {
 		}
 	}
 
-	// 학셍 이름 리스트를 배열로 받아서 초기화 하기
+	// 학생 이름 리스트를 배열로 받아서 초기화 하기
 	public ScoreServiceV1(String[] stNames) {
 
 		int length = stNames.length;
@@ -46,20 +46,44 @@ public class ScoreServiceV1 {
 	}
 
 	public void printScore() {
+		
+		int intKorSum = 0;
+		int intEngSum = 0;
+		int intMathSum = 0;
+		int intSubSum = 0;
+		float fAvgSum = 0.0f;
+		
 		System.out.println(Line.dLine(50));
 		System.out.println("빛나고교 성적표 v1");
 		System.out.println(Line.sLine(50));
-		System.out.println("이  름\t국어\t영어\t수학\t총점\t평균\t");
+		System.out.println("이  름\t 국어\t 영어\t 수학\t 총점\t 평균\t");
 		System.out.println(Line.sLine(50));
+		
 		for (int i = 0; i < scores.length; i++) {
+			
 			System.out.print(scores[i].getStName() + "\t");
-			System.out.print(scores[i].getIntKor() + "\t");
-			System.out.print(scores[i].getIntEng() + "\t");
-			System.out.print(scores[i].getIntMath() + "\t");
-			System.out.print(scores[i].getIntSum() + "\t");
-			System.out.printf("%3.2f\n",scores[i].getfAvg());
+			System.out.printf("%4s\t" ,scores[i].getIntKor());
+			System.out.printf("%4s\t" ,scores[i].getIntEng());
+			System.out.printf("%4s\t" ,scores[i].getIntMath());
+			System.out.printf("%4s\t" ,scores[i].getIntSum());
+			System.out.printf("%4.2f\n",scores[i].getfAvg());
+			
+			intKorSum += scores[i].getIntKor();
+			intEngSum += scores[i].getIntEng();
+			intMathSum += scores[i].getIntMath();
+			intSubSum += scores[i].getIntSum();
+			fAvgSum += scores[i].getfAvg();
 		}
+		
+		System.out.println(Line.sLine(50));
+		System.out.print("합  계" + "\t");
+		System.out.printf("%4d\t" ,intKorSum);
+		System.out.printf("%4d\t" ,intEngSum);
+		System.out.printf("%4d\t" ,intMathSum);
+		System.out.printf("%4d\t" ,intSubSum);
+		System.out.printf("%4.2f\n",fAvgSum);
 		System.out.println(Line.dLine(50));
+		
 	}
 
 }
