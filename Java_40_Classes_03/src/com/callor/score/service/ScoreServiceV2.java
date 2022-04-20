@@ -3,15 +3,14 @@ package com.callor.score.service;
 import com.callor.score.domain.ScoreV2VO;
 import com.callor.score.utils.Line;
 
-public class ScoreServiceV1 {
+public class ScoreServiceV2 extends ScoreServiceV1 {
 
-	protected ScoreV2VO[] scores;
 
-	public ScoreServiceV1() {
+	public ScoreServiceV2() {
 		this(10);
 	}
 
-	public ScoreServiceV1(int length) {
+	public ScoreServiceV2(int length) {
 
 		scores = new ScoreV2VO[length];
 		for (int i = 0; i < scores.length; i++) {
@@ -20,7 +19,7 @@ public class ScoreServiceV1 {
 	}
 
 	// 학생 이름 리스트를 배열로 받아서 초기화 하기
-	public ScoreServiceV1(String[] stNames) {
+	public ScoreServiceV2(String[] stNames) {
 
 		int length = stNames.length;
 		scores = new ScoreV2VO[length];
@@ -28,20 +27,6 @@ public class ScoreServiceV1 {
 		for (int i = 0; i < length; i++) {
 			scores[i] = new ScoreV2VO();
 			scores[i].setStName(stNames[i]);
-		}
-	}
-
-	public void makeScore() {
-
-		for (int i = 0; i < scores.length; i++) {
-
-			int intKor = (int) (Math.random() * 50) + 51;
-			int intEng = (int) (Math.random() * 50) + 51;
-			int intMath = (int) (Math.random() * 50) + 51;
-
-			scores[i].setIntKor(intKor);
-			scores[i].setIntEng(intEng);
-			scores[i].setIntMath(intMath);
 		}
 	}
 
@@ -61,11 +46,11 @@ public class ScoreServiceV1 {
 		
 		for (int i = 0; i < scores.length; i++) {
 			
-			System.out.print(scores[i].getStName() + "\t");
-			System.out.printf("%4s\t" ,scores[i].getIntKor());
-			System.out.printf("%4s\t" ,scores[i].getIntEng());
-			System.out.printf("%4s\t" ,scores[i].getIntMath());
-			System.out.printf("%4s\t" ,scores[i].getIntSum());
+			System.out.printf("%-3s\t",scores[i].getStName());
+			System.out.printf("%4d\t" ,scores[i].getIntKor());
+			System.out.printf("%4d\t" ,scores[i].getIntEng());
+			System.out.printf("%4d\t" ,scores[i].getIntMath());
+			System.out.printf("%6d\t  " ,scores[i].getIntSum());
 			System.out.printf("%6.2f\n",scores[i].getfAvg());
 			
 			intKorSum += scores[i].getIntKor();
@@ -73,15 +58,17 @@ public class ScoreServiceV1 {
 			intMathSum += scores[i].getIntMath();
 			intSubSum += scores[i].getIntSum();
 			fAvgSum += scores[i].getfAvg();
+			
+//			scores[i].getfAvg() / scores.length
+			
 		}
 		
-		
 		System.out.println(Line.sLine(50));
-		System.out.print("합  계" + "\t");
+		System.out.printf("%-3s\t","총  점");
 		System.out.printf("%4d\t" ,intKorSum);
 		System.out.printf("%4d\t" ,intEngSum);
 		System.out.printf("%4d\t" ,intMathSum);
-		System.out.printf("%4d\t" ,intSubSum);
+		System.out.printf("%6d\t  " ,intSubSum);
 		System.out.printf("%6.2f\n",fAvgSum);
 		System.out.println(Line.dLine(50));
 		
