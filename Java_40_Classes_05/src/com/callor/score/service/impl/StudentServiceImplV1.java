@@ -11,7 +11,7 @@ import com.callor.score.service.studentService;
 public class StudentServiceImplV1 implements studentService {
 
 	// 학생데이터들을 저장할 배열 변수
-	private StudentVO[] stVO;
+	private StudentVO[] stList;
 
 	// 데이터가 저장된 text file 이름
 	private String stFile;
@@ -24,11 +24,11 @@ public class StudentServiceImplV1 implements studentService {
 		// argument로 받은 stFile을 사용하기 위해 아래에 저장하는 것
 		// student.txt로 쓰지 않고 stFile에 담는 이유 : 파일 교체할 일이 있을 시 수월하게 하기 위함
 		this.stFile = stFile;
-		this.stVO = new StudentVO[length];
+		this.stList = new StudentVO[length];
 
 		// 클래스로 선언된 변수는 초기화해주기
-		for (int i = 0; i < this.stVO.length; i++) {
-			this.stVO[i] = new StudentVO();
+		for (int i = 0; i < this.stList.length; i++) {
+			this.stList[i] = new StudentVO();
 		}
 	}
 
@@ -65,6 +65,9 @@ public class StudentServiceImplV1 implements studentService {
 //			System.out.println(stLine);
 //		}
 
+		// stList의 요소를 가리키는 값
+		int index = 0;
+		
 		// 위의 코드를 간단하게
 		// 스캔한 내용이 있으면(true) {}내용을 반복하라
 		while(scan.hasNext()==true) {
@@ -86,9 +89,27 @@ public class StudentServiceImplV1 implements studentService {
 			stVO.setStGrade(stInfos[2]);
 			stVO.setStDept(stInfos[4]);
 			stVO.setStAddr(stInfos[5]);
+			
+			stList[index++] = stVO;
+		} // end while 여기를 지나면 stList에 모든 데이터가 담겨있을 것이다.
+		
+		this.printStudents();
+		
+	} // end loadStudent
+
+	// V1에서 stList에 담긴 데이터들을 확인하기 위하여 내부용으로 만든 method
+	private void printStudents() {
+		
+		for (int i = 0; i < stList.length; i++) {
+			System.out.println(stList[i].toString());
+		}
+		
+		// 위의 코드와 같음
+		for (StudentVO vo : stList) {
+			System.out.println(vo.toString());
 		}
 	}
-
+	
 	@Override
 	public StudentVO[] getStudents() {
 		return null;

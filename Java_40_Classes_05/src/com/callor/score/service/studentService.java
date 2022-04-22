@@ -9,6 +9,9 @@ import com.callor.score.domain.StudentVO;
 
 public interface studentService {
 
+	// 추상 method
+	// 메서드의 접근 제한자(public), 메서드의 이름, 매개변수, 매개변수, return type만 정의한 것
+	// 연산(실행)되는 실제 코드가 없는 method
 	public void loadStudent();
 
 	public StudentVO[] getStudents();
