@@ -8,7 +8,7 @@ public class Exec4 {
 		int num = (int) (Math.random() * 100) + 1;
 		int flag = 0;
 
-		for (int i = 2; i < num - 1; i++) {
+		for (int i = 2; i < num; i++) {
 			if (num % i == 0) {
 				flag = 1;
 				break;
