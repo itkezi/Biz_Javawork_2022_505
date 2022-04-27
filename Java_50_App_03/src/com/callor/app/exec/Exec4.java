@@ -7,8 +7,8 @@ public class Exec4 {
 		// num에 담겨있는 값이 소수인가
 		int num = (int) (Math.random() * 100) + 1;
 		int flag = 0;
-		
-		for (int i = 2; i < num; i++) {
+
+		for (int i = 2; i < num - 1; i++) {
 			if (num % i == 0) {
 				flag = 1;
 				break;
