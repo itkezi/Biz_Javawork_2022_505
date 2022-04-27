@@ -9,6 +9,7 @@ public class Exec4 {
 
 		if (num == 1) {
 			System.out.printf("나온 값이 %d입니다.\n", num);
+			return;
 		}
 
 		int i = 0;
@@ -18,7 +19,7 @@ public class Exec4 {
 				break;
 			} // end if
 		} // end for
-		
+
 		if (i < num)
 			System.out.print(num + "은(는) 소수가 아닙니다.");
 		else
