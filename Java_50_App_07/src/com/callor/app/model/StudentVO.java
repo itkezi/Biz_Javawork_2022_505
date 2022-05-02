@@ -20,7 +20,6 @@ public class StudentVO {
 	private String stTel;
 	private String stAddr;
 	private String stDept;
-	
-	private int intGrade;
+	private int stGrade;
 
 }
