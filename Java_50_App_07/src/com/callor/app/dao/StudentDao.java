@@ -64,6 +64,8 @@ public class StudentDao {
 								.build();
 		}
 		
+		return stList;
+		
 	}
 	
 
