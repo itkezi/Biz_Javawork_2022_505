@@ -23,7 +23,6 @@ public class ScoreServiceImplV1A implements ScoreService {
 
 		while (true) {
 			// 학생 이름 입력
-			
 			System.out.println("이름(종료 : QUIT) > ");
 			String stName = scan.nextLine();
 			// QUIT 입력되면 break;
