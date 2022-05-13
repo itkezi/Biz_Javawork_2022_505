@@ -79,14 +79,29 @@ public class TodoServiceImplV1 implements TodoService {
 
 	@Override
 	public TodoVO findByKey(String key) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void update(TodoVO tVO) {
-		// TODO Auto-generated method stub
-
+	public void update(Integer num, String content) {
+		int upindex = num - 1;
+		
+		TodoVO tVO;
+		try {
+			tVO = todoList.get(upindex);
+		} catch (Exception e) {
+			System.out.println("TODO List 데이터 범위를 벗어났습니다.");
+			return;
+		}
+		// 할 일 변경
+		tVO.setTContent(content);
+		
+		// 업데이트 후에 내용을 파일에 자동으로 저장하기
+		try {
+			this.saveTodo(null);
+		} catch (IOException e) {
+		}
+		
 	}
 
 	@Override
@@ -145,7 +160,7 @@ public class TodoServiceImplV1 implements TodoService {
 		try {
 			TodoVO tVO = todoList.get(index);
 
-			// todo의 eDate갑시 null 이거나 ""이면 위에서 만든 eDate(현재시각)을 그대로 다시 eDate에 담고
+			// todo의 eDate값이 null 이거나 ""이면 위에서 만든 eDate(현재시각)을 그대로 다시 eDate에 담고
 			// 그렇지 않으면 eDate에 null을 담아라
 			// 조건에 따라 변수에 다른 값을 저장하고 싶을 때
 			// 변수 = 조건 ? 참일 때 : 거짓일 때
@@ -159,6 +174,7 @@ public class TodoServiceImplV1 implements TodoService {
 
 		}
 
-	}
+	} // end load TODO
+
 
 }
